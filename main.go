@@ -25,8 +25,8 @@ func removeFromList(s []string, r string) []string {
 	return s
 }
 
-// Decode alphanumeric representation back to UTF-8 text
-func decodeAlphanumericToUTF8(encoded string) (string, error) {
+// Decode numeric string representation back to UTF-8 text
+func utf8FromNumericString(encoded string) (string, error) {
 	var decoded strings.Builder
 	for i := 0; i < len(encoded); i += 3 {
 		numStr := encoded[i : i+3]
@@ -78,7 +78,7 @@ func handleDNSRequest(w dns.ResponseWriter, r *dns.Msg) {
 					if idx >= 0 {
 						log.Printf("Received %s for transfer ID %s", transferData, transferID)
 
-						decoded, err := decodeAlphanumericToUTF8(transferData)
+						decoded, err := utf8FromNumericString(transferData)
 						if err != nil {
 							fmt.Println("Error:", err)
 						}

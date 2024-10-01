@@ -10,7 +10,7 @@ DNS Data Transfer is a Go application that allows users to send and receive data
 
 - **Client**: Sends data via DNS queries.
 - **Server**: Listens for DNS queries and saves data to files. Can handle multiple transfers at once.
-- **Data Encoding**: Converts UTF-8 text to an alphanumeric representation.
+- **Data Encoding**: Converts UTF-8 text to a numeric representation, with each character's Unicode code represented as a zero-padded string of width 3 digits.
 - **Chunking**: Splits data into manageable chunks for transmission.
 
 ## Prerequisites
