@@ -4,7 +4,7 @@ A simple tool for transfering data using the DNS protocol.
 
 ## Overview
 
-DNS Data Transfer is a Go application that allows users to send and receive data using DNS queries. The client generates unique IDs and encodes data into an alphanumeric format, while the server listens for DNS requests and saves received data to files.
+DNS Data Transfer is a Go application that allows users to send and receive data using DNS queries. The client generates unique IDs and encodes data into an numeric format, while the server listens for DNS requests and saves received data to files.
 
 ## Features
 
